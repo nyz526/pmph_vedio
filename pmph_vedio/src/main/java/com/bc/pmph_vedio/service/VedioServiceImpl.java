@@ -9,7 +9,7 @@ import com.bc.pmph_vedio.dao.VedioDao;
 import com.bc.pmph_vedio.po.Vedio;
 
 
-@Service
+@Service("vedioService")
 public class VedioServiceImpl  implements VedioService {
 	
 

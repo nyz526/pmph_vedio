@@ -1,7 +1,5 @@
 package com.bc.pmph_vedio.common;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *常量类
@@ -21,8 +19,7 @@ public class Const {
 	public static  String NEW_TYPE = "mp4";
 	
 	/**
-	 * 用来装载new 对象里面拿不到的bean单例
+	 * 转换完毕是否删除临时的原文件
 	 */
-	public static  List<Object> BEANS = new ArrayList<Object>(1);
-	
+	public static boolean  DELETE_OLD = false;
 }
