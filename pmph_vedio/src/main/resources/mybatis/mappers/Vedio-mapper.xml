@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bc.pmph_vedio.dao.VedioDao">
+	
+	<sql id="key">
+		<!-- 去掉最后一个, -->
+		<trim suffixOverrides=",">
+			<if test="fileSize != null ">
+				file_size,
+			</if>
+			<if test="userId != null ">
+				user_id,
+			</if>
+			<if test="bookId != null ">
+				book_id,
+			</if>
+			<if test="filePath != null and filePath !=''">
+				file_path,
+			</if>
+			<if test="fileName != null and fileName !=''">
+				file_name,
+			</if>
+			<if test=" fileType != null and fileType !=''">
+				file_type,
+			</if>
+		</trim>
+	</sql>
+	<!-- sql片段对应?,id属性值任意 -->
+	<sql id="value">
+		<!-- 去掉最后一个, -->
+		<trim suffixOverrides=",">
+			<if test="fileSize != null ">
+				#{fileSize},
+			</if>
+			<if test="userId != null ">
+				#{userId},
+			</if>
+			<if test="bookId != null ">
+				#{bookId},
+			</if>
+			<if test="filePath != null and filePath !=''">
+				#{filePath},
+			</if>
+			<if test="fileName != null and fileName !=''">
+				#{fileName},
+			</if>
+			<if test=" fileType != null and fileType !=''">
+				#{fileType},
+			</if>
+		</trim>
+	</sql>
+	<!-- 新增 Vedio -->
+	<insert id="addVedio" parameterType="Vedio">
+		<selectKey resultType="java.lang.Long" order="AFTER"
+			keyProperty="id"> <!-- order="AFTER"表示先执行插入语句，之后再执行查询语句 BEFORE 或 AFTER -->
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into vedio (
+		<include refid="key" />
+		)
+		values(
+		<include refid="value" />
+		) ;
+	</insert>
+	
+</mapper>

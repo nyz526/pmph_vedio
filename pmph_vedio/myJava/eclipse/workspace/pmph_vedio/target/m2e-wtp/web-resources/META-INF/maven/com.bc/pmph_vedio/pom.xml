@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.bc</groupId>
+  <artifactId>pmph_vedio</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1</version>
+  
+  <name>PMPH E-education Vedio </name>
+  <organization>
+        <name>Sichuan Bangchen Information Technology Co., Ltd</name>
+        <url>https://netfang.cn/</url>
+    </organization>  
+  <url>http://maven.apache.org</url>
+  
+   <properties>
+  
+        <!--Spring Framework -->
+        <springframework.ver>4.3.9.RELEASE</springframework.ver>
+                
+        <!--commons-fileupload -->
+        <commons-fileupload.ver>1.3.1</commons-fileupload.ver>
+        
+        <!--log4j -->
+        <log4j.ver>1.2.17</log4j.ver>
+        
+        <!--com.google.code.gson -->
+        <gson.ver>2.8.0</gson.ver>
+        
+        <!--mybatis -->
+        <mybatis.ver>3.4.4</mybatis.ver>
+        
+        <!--mybatis-spring -->
+        <mybatis-spring.ver>1.3.1</mybatis-spring.ver>
+        
+        <!--mysql  -->
+        <mysql-connector-java.ver>5.1.38</mysql-connector-java.ver>
+        
+        <!--druid from alibaba -->
+        <druid.ver>1.0.27</druid.ver>
+    </properties>
+	
+    <dependencies>
+       <!-- spring以及springMVC(mvc依赖spring) -->
+       <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.ver}</version>
+        </dependency>
+        
+        <!-- AOP切面 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${springframework.ver}</version>
+        </dependency>
+       
+        <!-- 日志包 -->
+        <dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>${log4j.ver}</version>
+		</dependency>
+        
+        <!-- 文件上传 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commons-fileupload.ver}</version>
+        </dependency>
+        
+        <!-- gson工具包 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.ver}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.ver}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.ver}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.ver}</version>
+        </dependency>
+        
+        
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.ver}</version>
+        </dependency>
+        
+  </dependencies>
+  
+  <build>
+    <finalName>pmph_vedio</finalName>
+  </build>
+  
+</project>

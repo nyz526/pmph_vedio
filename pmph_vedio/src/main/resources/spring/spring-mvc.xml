@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+">
+
+	<!-- 开启 annotation注解 -->
+    <mvc:annotation-driven/> 
+    
+    <!-- 静态资源默认处理 -->
+   	<mvc:default-servlet-handler/>
+    
+    <!-- 只扫面 controller包 -->
+    <context:component-scan base-package="com.bc.pmph_vedio.controller" >
+    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+          
+    <!-- 文件上传配置  100M-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8" />
+        <property name="maxUploadSize" value="104857600" />
+    </bean>
+</beans>
